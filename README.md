@@ -6,3 +6,5 @@ WPF CRUD Application Using DataGrid, MVVM Pattern, Entity Framework, And C#.NET
 
 ![MVVM-WPF-CRUD](https://github.com/user-attachments/assets/5be2eb9c-a55e-4693-b773-c2f64c4c4e71)
 
+- MVVM Pattern, Entity Framework, And C#.NET-v2
+
