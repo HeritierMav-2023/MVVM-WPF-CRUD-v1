@@ -13,10 +13,10 @@ namespace MVVM_WPF_CRUD_v1.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class WPF_DBEntities1 : DbContext
+    public partial class WPF_DBEntities2 : DbContext
     {
-        public WPF_DBEntities1()
-            : base("name=WPF_DBEntities1")
+        public WPF_DBEntities2()
+            : base("name=WPF_DBEntities2")
         {
         }
     

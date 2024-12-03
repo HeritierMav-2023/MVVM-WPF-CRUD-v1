@@ -76,7 +76,7 @@
                     <DataGridTextColumn Header="FIRST NAME" Binding="{Binding Path=FirstName}" Width="*"  IsReadOnly="True"/>
                     <DataGridTextColumn Header="LAST NAME" Binding="{Binding Path=LastName}" Width="*"  IsReadOnly="True"/>
                     <DataGridTextColumn Header="EMAIL" Binding="{Binding Path=Email}" Width="*" IsReadOnly="True"/>
-                    <DataGridTextColumn Header="DATE OF BIRTH" Binding="{Binding Path=DateOfBirth}" Width="*" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="DATE OF BIRTH" Binding="{Binding Path=DateOfBirth, StringFormat=\{0:dd.MM.yyyy\}}" Width="*" IsReadOnly="True"/>
                     <DataGridTemplateColumn Header="OPERATIONS" Width="*">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>

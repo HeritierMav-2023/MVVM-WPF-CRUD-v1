@@ -18,7 +18,7 @@ namespace MVVM_WPF_CRUD_v1.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        public string DateOfBirth { get; set; }
+        public System.DateTime DateOfBirth { get; set; }
         public bool IsDeleted { get; set; }
     }
 }

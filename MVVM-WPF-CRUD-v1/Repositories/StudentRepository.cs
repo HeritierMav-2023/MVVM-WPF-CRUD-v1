@@ -8,12 +8,12 @@ namespace MVVM_WPF_CRUD_v1.Repositories
     public class StudentRepository
     {
         //1-Proprietes data base
-        private WPF_DBEntities1 studentContext = null;
+        private WPF_DBEntities2 studentContext = null;
 
         //2-Constructor
         public StudentRepository()
         {
-            studentContext = new WPF_DBEntities1();
+            studentContext = new WPF_DBEntities2();
         }
 
         #region Methods

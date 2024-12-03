@@ -13,7 +13,7 @@
           <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="DateOfBirth" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateOfBirth" Type="datetime" Nullable="false" />
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityContainer Name="WPF_DB_2ModelStoreContainer">
@@ -32,10 +32,10 @@
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DateOfBirth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="WPF_DBEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="WPF_DBEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Students" EntityType="Self.Student" />
         </EntityContainer>
       </Schema>
@@ -43,7 +43,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="WPF_DB_2ModelStoreContainer" CdmEntityContainer="WPF_DBEntities1">
+        <EntityContainerMapping StorageEntityContainer="WPF_DB_2ModelStoreContainer" CdmEntityContainer="WPF_DBEntities2">
           <EntitySetMapping Name="Students">
             <EntityTypeMapping TypeName="WPF_DB_2Model.Student">
               <MappingFragment StoreEntitySet="Student">

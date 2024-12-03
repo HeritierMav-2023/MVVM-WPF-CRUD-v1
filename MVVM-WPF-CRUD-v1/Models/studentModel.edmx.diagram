@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="faf1d27481a246a68c8bb586342321fd" Name="Diagram1">
+      <Diagram DiagramId="6b42c6fd3dae4c729ace695029c0801a" Name="Diagram1">
         <EntityTypeShape EntityType="WPF_DB_2Model.Student" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>

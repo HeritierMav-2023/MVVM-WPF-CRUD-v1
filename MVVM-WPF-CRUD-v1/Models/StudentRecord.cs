@@ -68,7 +68,7 @@ namespace MVVM_WPF_CRUD_v1.Models
         public DateTime DateOfBirth
         {
             get
-            {
+          {
                 return _dateOfBirth;
             }
             set
