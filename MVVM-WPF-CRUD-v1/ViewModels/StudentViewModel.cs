@@ -4,6 +4,7 @@ using MVVM_WPF_CRUD_v1.ViewModels.Commands;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,15 +26,15 @@ namespace MVVM_WPF_CRUD_v1.ViewModels
         #region Proprietes
 
         private StudentRepository _repository;
-        private STUDENT _studentEntity = null;
+        private Student _studentEntity = null;
         public StudentRecord StudentRecord { get; set; }
-        public WPF_DBEntities StudentEntities { get; set; }
+        public WPF_DBEntities1 StudentEntities { get; set; }
         #endregion
 
         #region Constructor
         public StudentViewModel()
         {
-            _studentEntity = new STUDENT();
+            _studentEntity = new Student();
             _repository = new StudentRepository();
             StudentRecord = new StudentRecord();
 
@@ -129,11 +130,11 @@ namespace MVVM_WPF_CRUD_v1.ViewModels
                 _studentEntity.FirstName = StudentRecord.FirstName;
                 _studentEntity.LastName = StudentRecord.LastName;
                 _studentEntity.Email = StudentRecord.Email;
-                _studentEntity.DateOfBirth = StudentRecord.DateOfBirth;
+                _studentEntity.DateOfBirth = StudentRecord.DateOfBirth.ToString("dd/M/yyyy", CultureInfo.InvariantCulture); ;
 
                 try
                 {
-                    if (StudentRecord.Id != 0)
+                    if (StudentRecord.Id == 0)
                     {
                         _repository.AddStudent(_studentEntity);
                         MessageBox.Show("New record successfully saved.");
@@ -166,7 +167,7 @@ namespace MVVM_WPF_CRUD_v1.ViewModels
                 StudentRecord.FirstName = model.FirstName;
                 StudentRecord.LastName = model.LastName;
                 StudentRecord.Email = model.Email;
-                StudentRecord.DateOfBirth = model.DateOfBirth;
+                StudentRecord.DateOfBirth = DateTime.Parse(model.DateOfBirth);
             }
            
         }
@@ -180,7 +181,7 @@ namespace MVVM_WPF_CRUD_v1.ViewModels
                 FirstName = data.FirstName,
                 LastName = data.LastName,
                 Email = data.Email,
-                DateOfBirth = data.DateOfBirth
+                DateOfBirth = DateTime.Parse(data.DateOfBirth),
             }));
         }
 

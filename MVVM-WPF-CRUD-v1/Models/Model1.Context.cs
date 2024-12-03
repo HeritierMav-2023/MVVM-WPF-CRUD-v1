@@ -13,10 +13,10 @@ namespace MVVM_WPF_CRUD_v1.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class WPF_DBEntities : DbContext
+    public partial class WPF_DBEntities1 : DbContext
     {
-        public WPF_DBEntities()
-            : base("name=WPF_DBEntities")
+        public WPF_DBEntities1()
+            : base("name=WPF_DBEntities1")
         {
         }
     
@@ -25,6 +25,6 @@ namespace MVVM_WPF_CRUD_v1.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<STUDENT> STUDENTS { get; set; }
+        public virtual DbSet<Student> Students { get; set; }
     }
 }

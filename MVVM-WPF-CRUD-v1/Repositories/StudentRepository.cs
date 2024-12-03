@@ -8,12 +8,12 @@ namespace MVVM_WPF_CRUD_v1.Repositories
     public class StudentRepository
     {
         //1-Proprietes data base
-        private WPF_DBEntities studentContext = null;
+        private WPF_DBEntities1 studentContext = null;
 
         //2-Constructor
         public StudentRepository()
         {
-            studentContext = new WPF_DBEntities();
+            studentContext = new WPF_DBEntities1();
         }
 
         #region Methods
@@ -23,29 +23,29 @@ namespace MVVM_WPF_CRUD_v1.Repositories
         /// </summary>
         /// <param name="id">id student</param>
         /// <returns>student</returns>
-        public Models.STUDENT Get(int id)
+        public Models.Student Get(int id)
         {
-           var studentId = studentContext.STUDENTS.Find(id);
+           var studentId = studentContext.Students.Find(id);
             if (studentId != null)
                  return studentId;
             return null;
         }
 
-        public List<Models.STUDENT> GetAll()
+        public List<Models.Student> GetAll()
         {
-            return studentContext.STUDENTS.ToList();
+            return studentContext.Students.ToList();
         }
 
-        public void AddStudent(Models.STUDENT student)
+        public void AddStudent(Models.Student student)
         {
             if (student != null)
             {
-                studentContext.STUDENTS.Add(student);
+                studentContext.Students.Add(student);
                 studentContext.SaveChanges();
             }
         }
 
-        public void UpdateStudent(Models.STUDENT student)
+        public void UpdateStudent(Models.Student student)
         {
             var studentFind = this.Get(student.Id);
             if (studentFind != null)
@@ -61,10 +61,10 @@ namespace MVVM_WPF_CRUD_v1.Repositories
 
         public void RemoveStudent(int id)
         {
-            var studObj = studentContext.STUDENTS.Find(id);
+            var studObj = studentContext.Students.Find(id);
             if (studObj != null)
             {
-                studentContext.STUDENTS.Remove(studObj);
+                studentContext.Students.Remove(studObj);
                 studentContext.SaveChanges();
             }
         }
