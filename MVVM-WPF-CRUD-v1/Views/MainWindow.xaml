@@ -7,7 +7,7 @@
         xmlns:viewModel="clr-namespace:MVVM_WPF_CRUD_v1.ViewModels"
         xmlns:local="clr-namespace:MVVM_WPF_CRUD_v1"
         mc:Ignorable="d"
-        Height="500" Width="500">
+        Height="500" Width="700">
     <StackPanel Orientation="Vertical">
         <GroupBox Header="Student Form" Margin="10">
             <Grid Height="150">
@@ -67,17 +67,28 @@
         </StackPanel>
         
         <!--Zone Grille-->
-        <StackPanel Height="240">
-            <DataGrid x:Name="DataGridStudents" AutoGenerateColumns="False"
+        <StackPanel Height="auto">
+            <DataGrid x:Name="DataGridStudents" 
+                      Style="{DynamicResource DataGridStyle1}"  
+                      CellStyle="{DynamicResource DataGridCellStyle1}" 
+                      ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"
+                      RowStyle="{DynamicResource DataGridRowStyle2}" 
                       ItemsSource="{Binding StudentRecord.StudentRecords}" 
                       CanUserAddRows="False" Height="200" Margin="10">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Name" Binding="{Binding Path=Id}" Visibility="Hidden"/>
-                    <DataGridTextColumn Header="FIRST NAME" Binding="{Binding Path=FirstName}" Width="*"  IsReadOnly="True"/>
+                    <DataGridCheckBoxColumn CanUserResize="False" Width="auto" ElementStyle="{StaticResource CheckBoxStyle1}">
+                        <DataGridCheckBoxColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <CheckBox Style="{StaticResource CheckBoxStyle1}"/>
+                            </DataTemplate>
+                        </DataGridCheckBoxColumn.HeaderTemplate>
+                    </DataGridCheckBoxColumn>
+                    <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Path=Id}"/>
+                    <DataGridTextColumn Header="FIRST NAME" Binding="{Binding Path=FirstName}" Width="*"  IsReadOnly="True" Foreground="black"/>
                     <DataGridTextColumn Header="LAST NAME" Binding="{Binding Path=LastName}" Width="*"  IsReadOnly="True"/>
                     <DataGridTextColumn Header="EMAIL" Binding="{Binding Path=Email}" Width="*" IsReadOnly="True"/>
                     <DataGridTextColumn Header="DATE OF BIRTH" Binding="{Binding Path=DateOfBirth, StringFormat=\{0:dd.MM.yyyy\}}" Width="*" IsReadOnly="True"/>
-                    <DataGridTemplateColumn Header="OPERATIONS" Width="*">
+                    <DataGridTemplateColumn Header="OPERATIONS" Width="*" IsReadOnly="True">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -103,35 +114,11 @@
                                                                Style="{StaticResource gridButtonIcon}"/>
                                     </Button>
                                 </StackPanel>
-                                <!--<Button 
-                                    Style="{StaticResource gridEditButton}" 
-                                    CommandParameter="{Binding Path=Id}"
-                                    Command="{Binding Path=DataContext.EditCommand,
-                                    RelativeSource={RelativeSource FindAncestor,
-                                    AncestorType=Window}}">
-                                    <Icon:PackIconMaterial 
-                                        Kind="PencilOffOutline" 
-                                        Style="{StaticResource gridButtonIcon}"/>
-                                </Button>-->
+                               
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Width="50">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <!--<Button 
-                                    x:Name="ButtonDelete"
-                                    Style="{StaticResource gridRemoveButton}"
-                                    CommandParameter="{Binding Path=Id}"
-                                    Command="{Binding Path=DataContext.DeleteCommand, 
-                                    RelativeSource={RelativeSource FindAncestor,
-                                                AncestorType=Window}}">
-                                    <Icon:PackIconMaterial Kind="DeleteOffOutline" 
-                                                           Style="{StaticResource gridButtonIcon}"/>
-                                </Button>-->
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
+                    
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>

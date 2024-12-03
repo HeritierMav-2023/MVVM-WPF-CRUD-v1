@@ -149,9 +149,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\MVVM-WPF-CRUD.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <Resource Include="Images\Crud-mvvm-V3.png" />
+    <Resource Include="Images\Crud-MVVM-v2.png" />
     <Content Include="Models\studentModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>studentModel.edmx</DependentUpon>
